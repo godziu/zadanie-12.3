@@ -23,6 +23,7 @@ function showCountriesList(resp) {
   	var liE1 = document.createElement('li');
   	liE1.innerText = item.name;
   	countriesList.appendChild(liE1);
+    document.getElementById('error').innerHTML = "";
   	});
 }
 

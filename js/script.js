@@ -3,9 +3,6 @@
 var url = 'https://restcountries.eu/rest/v2/name/';
 var countriesList = document.getElementById('countries');
 
-
-
-
 function searchCountries() {
     var countryName = document.getElementById('country-name').value;
     if(!countryName.length) countryName = 'Poland';
@@ -13,7 +10,11 @@ function searchCountries() {
     .then(function(resp) {
     	return resp.json();
     })
-    .then(showCountriesList);
+    .then(showCountriesList)
+    .catch(function() {
+      console.log("error");
+      document.getElementById('error').innerHTML = "bład";
+    })
 }
 
 function showCountriesList(resp) {
